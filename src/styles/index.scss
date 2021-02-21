@@ -6,7 +6,32 @@
 *,
 *::after,
 *::before {
-    box-sizing: inherit;
-    margin: 0;
-    padding: 0;
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: $font-size-reset;
+}
+
+body {
+  font-family: $font-family;
+  letter-spacing: 0.15px;
+  overflow-x: hidden;
+}
+
+ul,
+li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  background: none;
+  border: unset;
+  cursor: pointer;
+  padding: 0;
 }

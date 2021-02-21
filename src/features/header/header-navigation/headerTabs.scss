@@ -1,0 +1,37 @@
+@import '../../../styles/base/base';
+
+.tabs {
+  display: flex;
+
+  &__item {
+    margin-left: 4rem;
+    position: relative;
+    width: 20rem;
+  }
+
+  &__link {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    height: 100%;
+    padding: 1rem 0;
+    width: 100%;
+  }
+
+  &__icon {
+    margin-right: 1.3rem;
+  }
+
+  .is-active {
+    color: $color-dark-active;
+
+    &::before {
+      background: $color-dark;
+      bottom: -0.4rem;
+      content: '';
+      height: 0.2rem;
+      position: absolute;
+      width: 100%;
+    }
+  }
+}
