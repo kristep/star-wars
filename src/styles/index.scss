@@ -1,0 +1,12 @@
+@charset "utf-8";
+
+@import './base/base';
+@import './mixins/mixins';
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
