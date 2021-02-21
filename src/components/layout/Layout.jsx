@@ -8,11 +8,13 @@ import "./layout.scss";
 
 const Layout = ({ children }) => {
   return (
-    <>
+    <div className="layout">
       <Header />
-      <Navigation />
-      <main>{children}</main>
-    </>
+      <div className="layout__page">
+        <Navigation />
+        <main className="layout__content">{children}</main>
+      </div>
+    </div>
   );
 };
 

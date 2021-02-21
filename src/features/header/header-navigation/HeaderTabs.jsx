@@ -1,29 +1,30 @@
-import React, { useState } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 
 import { ReactComponent as FirstTab } from "../../../assets/icons/first-tab.svg";
 import { ReactComponent as SecondTab } from "../../../assets/icons/second-tab.svg";
 
 import "./headerTabs.scss";
 
-const HeaderTabs = () => {
+function HeaderTabs() {
   return (
-    <nav>
+    <nav aria-label="secondary">
       <ul className="tabs">
         <li className="tabs__item is-active">
-          <a className="tabs__link">
+          <Link className="tabs__link">
             <FirstTab className="tabs__icon" />
             First tab
-          </a>
+          </Link>
         </li>
-        <li className="tabs__item">
-          <a className="tabs__link">
+        <button className="tabs__item">
+          <Link className="tabs__link">
             <SecondTab className="tabs__icon" />
             Second tab
-          </a>
-        </li>
+          </Link>
+        </button>
       </ul>
     </nav>
   );
-};
+}
 
 export default HeaderTabs;

@@ -29,9 +29,17 @@ li {
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 button {
   background: none;
   border: unset;
   cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  letter-spacing: inherit;
   padding: 0;
 }

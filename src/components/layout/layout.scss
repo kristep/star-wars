@@ -1,1 +1,14 @@
 @import '../../styles/base/base';
+
+.layout {
+  &__page {
+    display: flex;
+  }
+
+  &__content {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: calc(100vw - #{$width-sidebar});
+  }
+}
