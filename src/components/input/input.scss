@@ -1,0 +1,18 @@
+@import '../../styles/base/base';
+
+.input {
+  font-family: $font-family;
+
+  &--search {
+    border: 0;
+    font-family: $font-family;
+    font-size: $font-size-content;
+    letter-spacing: 0.4px;
+    padding: 0.5rem;
+    width: 14.5rem;
+
+    &::placeholder {
+      color: $color-light-gray;
+    }
+  }
+}
