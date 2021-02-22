@@ -8,10 +8,12 @@ import "./tableControllLine.scss";
 const TableControllLine = () => {
   return (
     <div className="control-line">
-      <Button large>Add new </Button>
+      <Button large>
+        <span>Add new</span>
+      </Button>
       <div className="control-line__search">
         <Button>
-          <SearchIcon />
+          <SearchIcon className="control-line__search-icon" />
         </Button>
         <input
           className="control-line__input"

@@ -1,6 +1,7 @@
 import React from "react";
 
 import TableControllLine from "../features/table-controller/TableControllLine";
+import TableOfHeroes from "../features/table-heroes/TableOfHeroes";
 
 import "./secondPage.scss";
 
@@ -12,6 +13,7 @@ const SecondPage = () => {
         <p className="second__subtitle">Star wars heroes from swapi api</p>
       </div>
       <TableControllLine />
+      <TableOfHeroes />
     </div>
   );
 };
