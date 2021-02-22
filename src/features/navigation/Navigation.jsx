@@ -1,6 +1,5 @@
 import React from "react";
 import classNames from "classnames";
-
 import { Link } from "react-router-dom";
 
 import "./navigation.scss";
@@ -8,15 +7,15 @@ import "./navigation.scss";
 const Navigation = () => {
   const navigationData = [
     {
-      title: "First",
+      text: "First",
       link: "/",
     },
     {
-      title: "Second",
+      text: "Second",
       link: "/second",
     },
     {
-      title: "Third",
+      text: "Third",
       link: "/third",
     },
   ];
@@ -30,11 +29,11 @@ const Navigation = () => {
             className={classNames("navigation__item", {
               "is-active":
                 window.location.pathname === item.link ||
-                window.location.pathname.includes(item.title.toLowerCase()),
+                window.location.pathname.includes(item.text.toLowerCase()),
             })}
           >
             <Link to={item.link} className="navigation__link">
-              {item.title}
+              {item.text}
             </Link>
           </li>
         ))}

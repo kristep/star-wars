@@ -1,7 +1,7 @@
 import React from "react";
 
 import { ReactComponent as SearchIcon } from "../../assets/icons/search.svg";
-import Button from "../../components/layout/button/Button";
+import Button from "../../components/button/Button";
 
 import "./tableControllLine.scss";
 

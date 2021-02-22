@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import classNames from "classnames";
 import { Link } from "react-router-dom";
 
 import { ReactComponent as FirstTab } from "../../../assets/icons/first-tab.svg";
@@ -7,21 +8,43 @@ import { ReactComponent as SecondTab } from "../../../assets/icons/second-tab.sv
 import "./headerTabs.scss";
 
 function HeaderTabs() {
+  const [whichActive, setWhichActive] = useState("first");
+  const tabsData = [
+    {
+      text: "First tab",
+      icon: <FirstTab className="tabs__icon" />,
+      title: "first",
+    },
+    {
+      text: "Second tab",
+      icon: <SecondTab className="tabs__icon" />,
+      title: "second",
+    },
+  ];
+
+  const handleClick = (link) => {
+    setWhichActive(link);
+  };
+
   return (
     <nav aria-label="secondary">
       <ul className="tabs">
-        <li className="tabs__item is-active">
-          <Link className="tabs__link">
-            <FirstTab className="tabs__icon" />
-            First tab
-          </Link>
-        </li>
-        <button className="tabs__item">
-          <Link className="tabs__link">
-            <SecondTab className="tabs__icon" />
-            Second tab
-          </Link>
-        </button>
+        {tabsData.map((item, i) => (
+          <li
+            key={i}
+            className={classNames("tabs__item", {
+              "is-active": whichActive === item.title,
+            })}
+          >
+            <Link
+              className="tabs__link"
+              onClick={() => handleClick(item.title)}
+            >
+              {item.icon}
+              {item.text}
+            </Link>
+          </li>
+        ))}
       </ul>
     </nav>
   );
