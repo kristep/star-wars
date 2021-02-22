@@ -7,8 +7,10 @@
 
   &__content {
     align-items: center;
+    background-color: $color-white;
     display: flex;
     justify-content: center;
+    margin: 2rem;
     width: calc(100vw - #{$width-sidebar});
   }
 }

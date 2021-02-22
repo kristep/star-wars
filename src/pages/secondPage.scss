@@ -1,0 +1,22 @@
+@import '../styles/base/base';
+
+.second {
+  border: 1px solid $color-gray;
+  border-radius: $border-radius-big;
+  padding: 3.2rem;
+  width: 80rem;
+
+  &__header {
+    text-align: center;
+  }
+
+  &__title {
+    font-size: $font-size-h1;
+    font-weight: $font-weight-normal;
+    margin: 0.8rem;
+  }
+
+  &__subtitle {
+    font-size: $font-size-body;
+  }
+}

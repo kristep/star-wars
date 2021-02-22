@@ -1,0 +1,28 @@
+@import '../../styles/base/base';
+
+.control-line {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3.7rem;
+
+  &__search {
+    border-bottom: 1px solid $color-black;
+    display: flex;
+  }
+
+  &__input {
+    border: 0;
+    font-family: $font-family;
+    font-size: $font-size-content;
+    padding-left: 0.5rem;
+    width: 15rem;
+
+    &::placeholder {
+      color: $color-light-gray;
+    }
+  }
+
+  .button {
+    align-self: flex-end;
+  }
+}

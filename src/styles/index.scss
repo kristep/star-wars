@@ -30,16 +30,14 @@ li {
 }
 
 a {
-  text-decoration: none;
+  // eslint-disable-next-line
   color: inherit;
+  text-decoration: none;
 }
 
 button {
   background: none;
   border: unset;
   cursor: pointer;
-  font-family: inherit;
-  font-size: inherit;
-  letter-spacing: inherit;
   padding: 0;
 }

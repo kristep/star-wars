@@ -1,18 +1,18 @@
 @import '../../styles/base/base';
 
 .navigation {
-  width: $width-sidebar;
-  min-height: calc(100vh - #{$height-header});
   background-color: $color-dark;
   color: $color-white;
+  min-height: calc(100vh - #{$height-header});
+  width: $width-sidebar;
   z-index: $z-index-above;
 
   &__list {
-    font-size: $font-size-body;
-    width: 100%;
-    text-align: center;
-    padding-top: 9rem;
     border-right: 2px solid $color-dark;
+    font-size: $font-size-body;
+    padding-top: 9rem;
+    text-align: center;
+    width: 100%;
   }
 
   &__item {
@@ -30,7 +30,7 @@
 
   &__link {
     display: inline-block;
-    width: 100%;
     padding: 1.1rem 0;
+    width: 100%;
   }
 }
