@@ -1,9 +1,5 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Layout from "./components/layout/Layout";
 
@@ -15,15 +11,14 @@ const App = () => {
           <Layout />
         </Route>
         <Route exact path="/second">
-          <Layout>
-          </Layout>
+          <Layout> </Layout>
         </Route>
-        <Route exact path="/third" >
+        <Route exact path="/third">
           <Layout />
         </Route>
       </Switch>
     </Router>
   );
-}
+};
 
 export default App;

@@ -16,6 +16,16 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,css,scss,md}": "prettier --write",
+    "src/**/*.{js,jsx}": "eslint --fix --max-warnings 0",
+    "src/**/*.{css,scss}": "stylelint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -33,5 +43,23 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "css-loader": "^5.0.0",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-plugin-formatjs": "^2.12.4",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "7.21.2",
+    "eslint-plugin-react-hooks": "4.1.2",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.4.2",
+    "node-sass": "^4.14.1",
+    "prettier": "^2.1.2",
+    "style-loader": "^2.0.0",
+    "stylelint": "^13.7.2",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-sass-guidelines": "^7.1.0",
+    "stylelint-declaration-use-variable": "^1.7.2",
+    "stylelint-prettier": "^1.1.2"
   }
 }
