@@ -12,7 +12,7 @@ import TablePagination from "./TablePagination";
 
 import "./table.scss";
 
-const Table = ({ columns, data }) => {
+const Table = ({ columns, data, isLoading }) => {
   const {
     getTableProps,
     getTableBodyProps,
@@ -39,9 +39,10 @@ const Table = ({ columns, data }) => {
     usePagination
   );
 
-  if (!data || data.length === 0) {
-    return <h2>Error</h2>;
+  if (isLoading) {
+    return <p className="table__loader">Loading...</p>;
   }
+
   return (
     <>
       <TableControllLine setGlobalFilter={setGlobalFilter} />
@@ -103,4 +104,5 @@ export default Table;
 Table.propTypes = {
   columns: PropTypes.array,
   data: PropTypes.array,
+  isLoading: PropTypes.bool,
 };

@@ -43,6 +43,14 @@ button {
   border: unset;
   cursor: pointer;
   padding: 0;
+
+  &:focus-visible {
+    outline: 2px solid $color-black;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: 0;
+  }
 }
 
 // for screen readers

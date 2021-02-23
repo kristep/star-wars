@@ -12,11 +12,12 @@
     display: flex;
     justify-content: center;
     margin: 2rem 3rem;
+    // padding-right: 2rem;
     width: calc(100vw - #{$width-sidebar});
   }
 }
 
-@include respond-to(620, max) {
+@include respond-to($breakpoint-md, max) {
   .layout {
     &__page {
       flex-direction: column;
@@ -24,6 +25,7 @@
 
     &__content {
       margin: 2rem auto;
+      // padding-right: 0;
       width: 100%;
     }
   }

@@ -8,13 +8,13 @@ $_border-light: 1px solid $color-white;
   background-color: $color-dark;
   color: $color-white;
   min-height: calc(100vh - #{$height-header});
+  min-width: 14rem;
   width: $width-sidebar;
   z-index: $z-index-above;
 
   &__list {
     border-right: $_border-dark;
     font-size: $font-size-body;
-
     padding-top: 9rem;
     text-align: center;
     width: 100%;
@@ -26,21 +26,31 @@ $_border-light: 1px solid $color-white;
     &:last-child {
       border-bottom: $_border-light;
     }
-
-    &.is-active {
-      background-color: $color-white;
-      color: $color-dark;
-    }
   }
 
   &__link {
     display: inline-block;
     padding: 1.1rem 0;
     width: 100%;
+
+    &:hover,
+    &:focus {
+      background-color: $color-dark-hover;
+    }
+  }
+
+  .is-active {
+    background-color: $color-white;
+    color: $color-dark;
+
+    &:hover,
+    &:focus {
+      background-color: $color-white;
+    }
   }
 }
 
-@include respond-to(620, max) {
+@include respond-to($breakpoint-md, max) {
   .navigation {
     bottom: 0;
     min-height: 4rem;

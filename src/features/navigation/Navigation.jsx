@@ -24,15 +24,15 @@ const Navigation = () => {
     <nav className="navigation" aria-label="primary">
       <ul className="navigation__list">
         {navigationData.map((item, i) => (
-          <li
-            key={i}
-            className={classNames("navigation__item", {
-              "is-active":
-                window.location.pathname === item.link ||
-                window.location.pathname.includes(item.text.toLowerCase()),
-            })}
-          >
-            <Link to={item.link} className="navigation__link">
+          <li key={i} className="navigation__item">
+            <Link
+              to={item.link}
+              className={classNames("navigation__link", {
+                "is-active":
+                  window.location.pathname === item.link ||
+                  window.location.pathname.includes(item.text.toLowerCase()),
+              })}
+            >
               {item.text}
             </Link>
           </li>

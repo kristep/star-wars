@@ -17,9 +17,20 @@
 
   &__head {
     padding: 0.8rem 0;
+
+    &:not(:last-child) {
+      padding-right: 0.5rem;
+    }
   }
 
   &__data:not(:last-child) {
     padding-right: 1rem;
+  }
+
+  &__loader {
+    display: grid;
+    font-size: $font-size-content;
+    height: 52rem;
+    place-items: center;
   }
 }
