@@ -28,6 +28,7 @@ const TableControllLine = ({ setGlobalFilter }) => {
     </div>
   );
 };
+
 TableControllLine.propTypes = {
   setGlobalFilter: PropTypes.func,
 };

@@ -16,7 +16,6 @@
   ],
   "rules": {
     "no-console": "warn",
-    "react/display-name": "warn",
     "jsx-a11y/no-onchange": "warn",
     "formatjs/no-offset": "error",
     "formatjs/enforce-default-message": "error",

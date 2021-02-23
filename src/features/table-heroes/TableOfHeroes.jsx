@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
 
 import { useFetch } from "../../utils/useFetch";
-
 import Table from "../../components/table/Table";
 
 const TableOfHeroes = () => {
@@ -27,6 +26,12 @@ const TableOfHeroes = () => {
       {
         Header: "Home world",
         accessor: "homeworld",
+        width: 150,
+        Cell: (row) => {
+          const { response: world, isLoading } = useFetch(row.value);
+          if (isLoading) return <>...</>;
+          if (row.value) return <>{world.name}</>;
+        },
       },
     ],
     []

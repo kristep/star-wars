@@ -1,8 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { useTable, useSortBy, useGlobalFilter } from "react-table";
+import {
+  useTable,
+  useSortBy,
+  useGlobalFilter,
+  usePagination,
+} from "react-table";
 
 import TableControllLine from "../../features/table-controller/TableControllLine";
+import TablePagination from "./TablePagination";
 
 import "./table.scss";
 
@@ -11,16 +17,26 @@ const Table = ({ columns, data }) => {
     getTableProps,
     getTableBodyProps,
     headers,
-    rows,
     prepareRow,
     setGlobalFilter,
+    page,
+    canPreviousPage,
+    canNextPage,
+    pageOptions,
+    pageCount,
+    gotoPage,
+    nextPage,
+    previousPage,
+    state: { pageIndex },
   } = useTable(
     {
       columns,
       data,
+      initialState: { pageIndex: 0, pageSize: 8 },
     },
     useGlobalFilter,
-    useSortBy
+    useSortBy,
+    usePagination
   );
 
   if (!data || data.length === 0) {
@@ -35,23 +51,23 @@ const Table = ({ columns, data }) => {
             {headers.map((column, i) => (
               <th
                 key={i}
+                width={column.width}
                 {...column.getHeaderProps(column.getSortByToggleProps())}
                 className="table__head"
               >
                 {column.render("Header")}
                 <span>
-                  {column.isSorted ? (column.isSortedDesc ? "▼" : "▲") : ""}
+                  {column.isSorted ? (column.isSortedDesc ? " ▼" : " ▲") : ""}
                 </span>
               </th>
             ))}
           </tr>
         </thead>
         <tbody {...getTableBodyProps()}>
-          {rows.map((row, i) => {
+          {page.map((row, i) => {
             prepareRow(row);
             return (
-              // eslint-disable-next-line
-              <tr {...row.getRowProps()} className="table__row">
+              <tr {...row.getRowProps()} className="table__row" key={i}>
                 {row.cells.map((cell, i) => {
                   return (
                     <td
@@ -68,6 +84,16 @@ const Table = ({ columns, data }) => {
           })}
         </tbody>
       </table>
+      <TablePagination
+        canPreviousPage={canPreviousPage}
+        canNextPage={canNextPage}
+        pageOptions={pageOptions}
+        pageCount={pageCount}
+        gotoPage={gotoPage}
+        nextPage={nextPage}
+        previousPage={previousPage}
+        pageIndex={pageIndex}
+      />
     </>
   );
 };

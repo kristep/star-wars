@@ -13,4 +13,9 @@
     font-size: $font-size-small;
     padding: 0.8rem 3rem;
   }
+
+  &--pagination {
+    padding: 0.4rem 1rem;
+    // border: 1px solid $color-gray;
+  }
 }

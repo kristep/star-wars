@@ -18,4 +18,8 @@
   &__head {
     padding: 0.8rem 0;
   }
+
+  &__data:not(:last-child) {
+    padding-right: 1rem;
+  }
 }
