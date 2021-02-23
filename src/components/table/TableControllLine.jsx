@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { ReactComponent as SearchIcon } from "../../assets/icons/search.svg";
-import Button from "../../components/button/Button";
-import Input from "../../components/input/Input";
+import Button from "../button/Button";
+import Input from "../input/Input";
 
 import "./tableControllLine.scss";
 

@@ -7,7 +7,7 @@ import {
   usePagination,
 } from "react-table";
 
-import TableControllLine from "../../features/table-controller/TableControllLine";
+import TableControllLine from "./TableControllLine";
 import TablePagination from "./TablePagination";
 
 import "./table.scss";
