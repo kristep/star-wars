@@ -1,10 +1,15 @@
 @import '../styles/base/base';
+@import '../styles/mixins/mixins';
 
 .second {
   border: 1px solid $color-gray;
   border-radius: $border-radius-big;
   padding: 3.1rem 3.5rem 1.3rem 3.1rem;
   width: 80rem;
+
+  @include respond-to(620, max) {
+    width: 90%;
+  }
 
   &__header {
     text-align: center;

@@ -9,9 +9,7 @@ import "./header.scss";
 const Header = () => {
   return (
     <header className="header">
-      <div className="header__left">
-        <Logo />
-      </div>
+      <Logo className="header__logo" />
       <div className="header__right">
         <HeaderTabs />
         <User className="header__user-icon" />

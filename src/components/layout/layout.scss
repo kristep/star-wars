@@ -1,4 +1,5 @@
 @import '../../styles/base/base';
+@import '../../styles/mixins/mixins';
 
 .layout {
   &__page {
@@ -10,7 +11,20 @@
     background-color: $color-white;
     display: flex;
     justify-content: center;
-    margin: 2rem;
+    margin: 2rem 3rem;
     width: calc(100vw - #{$width-sidebar});
+  }
+}
+
+@include respond-to(620, max) {
+  .layout {
+    &__page {
+      flex-direction: column;
+    }
+
+    &__content {
+      margin: 2rem auto;
+      width: 100%;
+    }
   }
 }

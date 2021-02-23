@@ -1,4 +1,5 @@
 @import '../../styles/base/base';
+@import '../../styles/mixins/mixins';
 
 .navigation {
   background-color: $color-dark;
@@ -32,5 +33,34 @@
     display: inline-block;
     padding: 1.1rem 0;
     width: 100%;
+  }
+}
+
+@include respond-to(620, max) {
+  .navigation {
+    bottom: 0;
+    min-height: $height-header;
+    position: fixed;
+    width: 100%;
+
+    &__list {
+      border: 0;
+      border-bottom: 2px solid $color-dark;
+      border-top: 2px solid $color-dark;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+    }
+
+    &__item {
+      border-left: 1px solid $color-white;
+      border-top: 0;
+      width: 10rem;
+
+      &:last-child {
+        border-bottom: 0;
+        border-right: 1px solid $color-white;
+      }
+    }
   }
 }

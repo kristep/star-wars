@@ -1,4 +1,5 @@
 @import '../../../styles/base/base';
+@import '../../../styles/mixins/mixins';
 
 .tabs {
   display: flex;
@@ -7,6 +8,12 @@
     margin-left: 4rem;
     position: relative;
     width: 20rem;
+
+    @include respond-to(620, max) {
+      font-size: $font-size-content;
+      margin-left: 1rem;
+      width: 12rem;
+    }
   }
 
   &__link {
