@@ -12,12 +12,12 @@ function HeaderTabs() {
   const tabsData = [
     {
       text: "First tab",
-      icon: <FirstTab className="tabs__icon" />,
+      icon: <FirstTab className="tabs__icon tabs__icon--first" />,
       title: "first",
     },
     {
       text: "Second tab",
-      icon: <SecondTab className="tabs__icon" />,
+      icon: <SecondTab className="tabs__icon tabs__icon--second" />,
       title: "second",
     },
   ];

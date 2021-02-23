@@ -27,6 +27,14 @@
 
   &__icon {
     margin-right: 1.3rem;
+
+    &--first {
+      width: 1.6rem;
+    }
+
+    &--second {
+      width: 1.9rem;
+    }
   }
 
   .is-active {
@@ -34,11 +42,15 @@
 
     &::before {
       background: $color-dark;
-      bottom: -0.4rem;
+      bottom: -0.3rem;
       content: '';
       height: 0.1rem;
       position: absolute;
       width: 100%;
+
+      @include respond-to(500, max) {
+        bottom: -0.1rem;
+      }
     }
   }
 }

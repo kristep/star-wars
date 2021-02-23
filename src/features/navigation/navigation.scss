@@ -1,6 +1,9 @@
 @import '../../styles/base/base';
 @import '../../styles/mixins/mixins';
 
+$_border-dark: 2px solid $color-dark;
+$_border-light: 1px solid $color-white;
+
 .navigation {
   background-color: $color-dark;
   color: $color-white;
@@ -9,18 +12,19 @@
   z-index: $z-index-above;
 
   &__list {
-    border-right: 2px solid $color-dark;
+    border-right: $_border-dark;
     font-size: $font-size-body;
+
     padding-top: 9rem;
     text-align: center;
     width: 100%;
   }
 
   &__item {
-    border-top: 1px solid $color-white;
+    border-top: $_border-light;
 
     &:last-child {
-      border-bottom: 1px solid $color-white;
+      border-bottom: $_border-light;
     }
 
     &.is-active {
@@ -39,27 +43,27 @@
 @include respond-to(620, max) {
   .navigation {
     bottom: 0;
-    min-height: $height-header;
+    min-height: 4rem;
     position: fixed;
     width: 100%;
 
     &__list {
       border: 0;
-      border-bottom: 2px solid $color-dark;
-      border-top: 2px solid $color-dark;
+      border-bottom: $_border-dark;
+      border-top: $_border-dark;
       display: flex;
       justify-content: center;
       padding: 0;
     }
 
     &__item {
-      border-left: 1px solid $color-white;
+      border-left: $_border-light;
       border-top: 0;
       width: 10rem;
 
       &:last-child {
         border-bottom: 0;
-        border-right: 1px solid $color-white;
+        border-right: $_border-light;
       }
     }
   }

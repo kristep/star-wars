@@ -23,6 +23,7 @@ function TablePagination(props) {
         <Button
           handleClick={() => gotoPage(0)}
           isDisabled={!canPreviousPage}
+          ariaLabel={"First page"}
           pagination
         >
           <span>≪</span>
@@ -30,9 +31,10 @@ function TablePagination(props) {
         <Button
           handleClick={() => previousPage()}
           isDisabled={!canPreviousPage}
+          ariaLabel={"Previous page"}
           pagination
         >
-          <span> {"<"}</span>
+          <span>⊲</span>
         </Button>
         <span className="pagination__info">
           page {pageIndex + 1} of {pageOptions.length}
@@ -40,13 +42,15 @@ function TablePagination(props) {
         <Button
           handleClick={() => nextPage()}
           isDisabled={!canNextPage}
+          ariaLabel={"Next page"}
           pagination
         >
-          <span>{">"}</span>
+          <span>⊳</span>
         </Button>
         <Button
           handleClick={() => gotoPage(pageCount - 1)}
           isDisabled={!canNextPage}
+          ariaLabel={"Last page"}
           pagination
         >
           <span>≫</span>

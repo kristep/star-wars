@@ -14,9 +14,7 @@ const TableControllLine = ({ setGlobalFilter }) => {
         <span>Add new</span>
       </Button>
       <div className="control-line__search">
-        <Button>
-          <SearchIcon className="control-line__search-icon" />
-        </Button>
+        <SearchIcon className="control-line__search-icon" />
         <Input
           placeholder="search company..."
           id="search"
