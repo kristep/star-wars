@@ -23,7 +23,6 @@ const Input = (props) => {
 
   return (
     <>
-      {/* eslint-disable-next-line */}
       <label
         htmlFor={id}
         className={classNames({

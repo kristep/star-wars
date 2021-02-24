@@ -4,19 +4,21 @@ import axios from "axios";
 import { useFetch } from "../../utils/useFetch";
 import Table from "../../components/table/Table";
 
+import "./tableOfHeroes.scss";
+
 const TableOfHeroes = () => {
   const [data, setData] = useState([]);
   const [tableData, setTableData] = useState([]);
   const [url, setUrl] = useState("http://swapi.dev/api/people");
 
-  const { response, isLoading } = useFetch(url);
+  const { response, isLoading, error } = useFetch(url);
 
   const columns = useMemo(
     () => [
       {
         Header: "Name",
         accessor: "name",
-        width: "30%",
+        width: "35%",
       },
       {
         Header: "Birth data",
@@ -31,7 +33,7 @@ const TableOfHeroes = () => {
       {
         Header: "Home world",
         accessor: "homeworld",
-        width: "30%",
+        width: "25%",
       },
     ],
     []
@@ -70,8 +72,16 @@ const TableOfHeroes = () => {
   if (isLoading) {
     return <p className="table__loader">Loading...</p>;
   }
-
-  return tableData.length !== 0 && <Table columns={columns} data={tableData} />;
+  if (error) {
+    return <p className="table__loader">Failed to fetch data.</p>;
+  }
+  return (
+    tableData.length !== 0 && (
+      <div className="table-heroes">
+        <Table columns={columns} data={tableData} />
+      </div>
+    )
+  );
 };
 
 export default TableOfHeroes;

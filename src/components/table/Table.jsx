@@ -41,46 +41,49 @@ const Table = ({ columns, data }) => {
 
   return (
     <>
-      <TableControllLine setGlobalFilter={setGlobalFilter} />
-      <table {...getTableProps()} className="table">
-        <thead>
-          <tr className="table__row">
-            {headers.map((column, i) => (
-              <th
-                key={i}
-                width={column.width}
-                {...column.getHeaderProps(column.getSortByToggleProps())}
-                className="table__head"
-              >
-                {column.render("Header")}
-                <span>
-                  {column.isSorted ? (column.isSortedDesc ? " ▼" : " ▲") : ""}
-                </span>
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody {...getTableBodyProps()}>
-          {page.map((row, i) => {
-            prepareRow(row);
-            return (
-              <tr {...row.getRowProps()} className="table__row" key={i}>
-                {row.cells.map((cell, i) => {
-                  return (
-                    <td
-                      key={i}
-                      {...cell.getCellProps()}
-                      className="table__data"
-                    >
-                      {cell.render("Cell")}
-                    </td>
-                  );
-                })}
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
+      <div>
+        <TableControllLine setGlobalFilter={setGlobalFilter} />
+        <table {...getTableProps()} className="table">
+          <thead>
+            <tr className="table__row">
+              {headers.map((column, i) => (
+                <th
+                  key={i}
+                  width={column.width}
+                  {...column.getHeaderProps(column.getSortByToggleProps())}
+                  className="table__head"
+                >
+                  {column.render("Header")}
+                  <span>
+                    {column.isSorted ? (column.isSortedDesc ? " ▼" : " ▲") : ""}
+                  </span>
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody {...getTableBodyProps()}>
+            {page.map((row, i) => {
+              prepareRow(row);
+              return (
+                <tr {...row.getRowProps()} className="table__row" key={i}>
+                  {row.cells.map((cell, i) => {
+                    return (
+                      <td
+                        key={i}
+                        {...cell.getCellProps()}
+                        className="table__data"
+                      >
+                        {cell.render("Cell")}
+                      </td>
+                    );
+                  })}
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+
       <TablePagination
         canPreviousPage={canPreviousPage}
         canNextPage={canNextPage}

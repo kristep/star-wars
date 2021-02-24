@@ -4,6 +4,7 @@
   display: flex;
   font-size: $font-size-small;
   justify-content: center;
+  justify-self: flex-end;
   margin-top: 2rem;
 
   &__info {

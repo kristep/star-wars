@@ -13,7 +13,7 @@
 }
 
 @mixin respond-to-mobile() {
-  @include respond-to(500, max) {
+  @include respond-to($breakpoint-sm, max) {
     @content;
   }
 }

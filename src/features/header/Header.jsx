@@ -13,7 +13,7 @@ const Header = ({ customHeaderRenderer }) => {
       <Logo className="header__logo" />
       <div className="header__right">
         {customHeaderRenderer && customHeaderRenderer()}
-        <Button user>
+        <Button user ariaLabel="user profile">
           <User className="header__user-icon" />
         </Button>
       </div>

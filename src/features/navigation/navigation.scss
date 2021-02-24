@@ -8,7 +8,6 @@ $_border-light: 1px solid $color-white;
   background-color: $color-dark;
   color: $color-white;
   min-height: calc(100vh - #{$height-header});
-  min-width: 14rem;
   width: $width-sidebar;
   z-index: $z-index-above;
 

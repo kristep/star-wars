@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import classNames from "classnames";
 import { Link } from "react-router-dom";
 
-import { ReactComponent as FirstTab } from "../../../assets/icons/first-tab.svg";
-import { ReactComponent as SecondTab } from "../../../assets/icons/second-tab.svg";
+import { ReactComponent as FirstTab } from "../../assets/icons/first-tab.svg";
+import { ReactComponent as SecondTab } from "../../assets/icons/second-tab.svg";
 
 import "./headerTabs.scss";
 
@@ -14,11 +14,13 @@ function HeaderTabs() {
       text: "First tab",
       icon: <FirstTab className="tabs__icon tabs__icon--first" />,
       title: "first",
+      link: "/second",
     },
     {
       text: "Second tab",
       icon: <SecondTab className="tabs__icon tabs__icon--second" />,
       title: "second",
+      link: "/second",
     },
   ];
 
@@ -39,6 +41,7 @@ function HeaderTabs() {
             <Link
               className="tabs__link"
               onClick={() => handleClick(item.title)}
+              to={item.link}
             >
               {item.icon}
               {item.text}

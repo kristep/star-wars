@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Layout from "./components/layout/Layout";
-import HeaderTabs from "./features/header/header-navigation/HeaderTabs";
+import HeaderTabs from "./features/header/HeaderTabs";
 import SecondPage from "./pages/SecondPage";
 
 const App = () => {
