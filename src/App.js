@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Layout from "./components/layout/Layout";
+import HeaderTabs from "./features/header/header-navigation/HeaderTabs";
 import SecondPage from "./pages/SecondPage";
 
 const App = () => {
@@ -12,7 +13,7 @@ const App = () => {
           <Layout />
         </Route>
         <Route exact path="/second">
-          <Layout>
+          <Layout customHeaderRenderer={() => <HeaderTabs />}>
             <SecondPage />
           </Layout>
         </Route>

@@ -6,10 +6,10 @@ import Navigation from "../../features/navigation/Navigation";
 
 import "./layout.scss";
 
-const Layout = ({ children }) => {
+const Layout = ({ children, customHeaderRenderer }) => {
   return (
     <div className="layout">
-      <Header />
+      <Header customHeaderRenderer={customHeaderRenderer} />
       <div className="layout__page">
         <Navigation />
         <main className="layout__content">{children}</main>
@@ -20,6 +20,7 @@ const Layout = ({ children }) => {
 
 Layout.propTypes = {
   children: PropTypes.object,
+  customHeaderRenderer: PropTypes.func,
 };
 
 export default Layout;
