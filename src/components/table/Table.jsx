@@ -12,7 +12,7 @@ import TablePagination from "./TablePagination";
 
 import "./table.scss";
 
-const Table = ({ columns, data, isLoading }) => {
+const Table = ({ columns, data }) => {
   const {
     getTableProps,
     getTableBodyProps,
@@ -38,10 +38,6 @@ const Table = ({ columns, data, isLoading }) => {
     useSortBy,
     usePagination
   );
-
-  if (isLoading) {
-    return <p className="table__loader">Loading...</p>;
-  }
 
   return (
     <>
@@ -104,5 +100,4 @@ export default Table;
 Table.propTypes = {
   columns: PropTypes.array,
   data: PropTypes.array,
-  isLoading: PropTypes.bool,
 };
